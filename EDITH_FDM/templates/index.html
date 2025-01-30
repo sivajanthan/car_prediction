@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Car Price Prediction</title>
+</head>
+<body>
+    <span class="span1">EDITH</span>
+    <div class="header">
+        <div class="left-side">
+        </div>
+        <div class="upper">
+            
+        </div>
+    </div>
+    <div class="image_div">
+        <div class="image_cover">
+            <div class="all_inputs">
+                {% if not predicted_price %}
+                <h1 class="title">Find Your Right Car</h1>
+                {% endif %}
+                {% if predicted_price %}
+                <h1 class="title_2"> Price (INR) :{{ predicted_price }} </h1>
+                {% endif %}
+                {% if not predicted_price %}
+                <form action="/predict" method="POST">
+                    <!-- Dropdown for Company Name -->
+                    <div class="input_div">
+                        <label for="company">Company Name:</label>
+                    <select name="company" id="company">
+                        {% for company in companies %}
+                        <option value="{{ company }}">{{ company }}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+
+                    <!-- Dropdown for Fuel Type -->
+                    <div class="input_div">
+                        <label for="fuel">Fuel Type:</label>
+                        <select name="fuel" id="fuel">
+                        {% for fuel in fuels %}
+                        <option value="{{ fuel }}">{{ fuel }}</option>
+                        {% endfor %}
+                        </select>
+                    </div>
+                    
+
+                    <!-- Dropdown for Tyre Condition -->
+                    <div class="input_div">
+                        <label for="tyre">Tyre Condition:</label>
+                        <select name="tyre" id="tyre">
+                            {% for tyre in tyres %}
+                            <option value="{{ tyre }}">{{ tyre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+
+                    <!-- Dropdown for Owner Type -->
+
+                    <div class="input_div">
+                        <label for="owner">Owner Type:</label>
+                    <select name="owner" id="owner">
+                        {% for owner in owners %}
+                        <option value="{{ owner }}">{{ owner }}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+                    
+
+                    <!-- Dropdown for Registration Number -->
+                    <div class="input_div">
+                        <label for="registration">Registration Number:</label>
+                    <select name="registration" id="registration">
+                        {% for registration in registrations %}
+                        <option value="{{ registration }}">{{ registration }}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+                    
+
+                    <!-- Dropdown for Transmission Type -->
+                    <div class="input_div">
+                        <label for="transmission">Transmission Type:</label>
+                    <select name="transmission" id="transmission">
+                        {% for transmission in transmissions %}
+                        <option value="{{ transmission }}">{{ transmission }}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+
+                    <!-- Dropdown for Registration Certificate -->
+                    <div class="input_div">
+                        <label for="certificate">Registration Certificate:</label>
+                    <select name="certificate" id="certificate">
+                        {% for certificate in certificates %}
+                        <option value="{{ certificate }}">{{ certificate }}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+
+                    <!-- Dropdown for Car Name -->
+                    <div class="input_div">
+                        <label for="car_name">Car Name:</label>
+                    <select name="car_name" id="car_name">
+                        {% for car in car_names %}
+                        <option value="{{ car }}">{{ car }}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+
+                    <!-- Numerical input for Make Year -->
+
+                    <div class="input_div">
+                        <label for="make_year">Make Year:</label>
+                    <input type="number" name="make_year" required>
+                    </div>
+                    
+
+                    <div class="input_div">
+                        <!-- Numerical input for Mileage -->
+                    <label for="mileage">Mileage:</label>
+                    <input type="number" step="any" name="mileage" required>
+                    </div>
+                    
+                    <div class="checkbox">
+                        <div class="only_check">
+                            <!-- Accessories as checkboxes -->
+
+                            {% if not predicted_price %}
+                            <label class="hel">Accessories:</label><br>
+                            <div class="hhh">
+                                    {% for accessory, weight in accessories.items() %}
+                                <input type="checkbox" class="only_check_input" name="accessories" value="{{ accessory }}">{{ accessory }}<br>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        
+                        </div>
+                        <input class="checkbox_button" type="submit" value="Predict Price" id="result">
+
+                        {% endif %}
+                        
+                        {% if predicted_price %}
+                        <form action="/predict_again" method="POST">
+                        <input class="checkbox_button" type="submit" value="Predict Again" id="result">
+                        </form>
+                        {% endif %}
+                    </div>
+                    
+                    
+                </form>
+            </div>
+        </div>
+
+        {% if not predicted_price %}
+    
+        <div class="whole_float"></div>
+        <img src="{{ url_for('static', filename='img2.jpg') }}" alt="">
+    </div>
+    {% endif %}
+      
+</body>
+</html>

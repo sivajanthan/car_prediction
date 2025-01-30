@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.upper{
+    width: 100%;
+    height: 50px;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+}
+.image_cover{
+    display: flex;
+
+}
+
+.input_div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0px;
+}
+
+.input_div select{
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(231, 231, 231);
+    border-style: none;
+    width: 150px;
+}
+.input_div input{
+    height: 20px;
+    width: 150px;
+}
+.input_div label{
+    font-size: 14px;
+    color: rgb(70, 70, 70);
+}
+.header{
+    background-color:rgb(0, 0, 0);
+    width: 100%;
+    height:100px;
+    overflow: hidden;
+}
+   .left-side {
+    width: 0;
+    height: 0;
+    border-left: 600px solid yellow; /* Left side is yellow */
+    border-bottom: 400px solid transparent;
+  }
+.span1{
+    color: black;
+    left: 0;
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 50px;
+    margin-top: 20px;
+    position: absolute;
+    z-index: 100;
+  }
+.image_div{
+    height: 100vh;
+    width: 100%;
+}
+
+.advertise{
+    background-color: white;
+    width: 100px;
+    height: 100px;
+}
+.image_div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}  
+.checkbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox_button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.443), 5px 0px 20px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    border-style: none;
+
+}
+
+.checkbox_button:hover{
+    background-color: rgb(207, 0, 0);
+}
+.title{
+    margin-bottom: 20px;
+}
+
+.all_inputs{
+    margin-top: 50px;
+    padding: 30px 0px;
+    position: absolute;
+    margin-left: 100px;
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.443), 5px 0px 20px 0 rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.only_check{
+    font-size: 13px;
+    margin: 15px 0px;
+}
+.only_check_input{
+    font-size: 25px;
+}
+.hel{
+    font-size: 25px;
+}
+
+.hhh{
+    margin-top: 20px;
+}
+
+.hhh input{
+    margin: 3px 0px;
+}
+
+.title_2{
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
